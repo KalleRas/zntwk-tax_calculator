@@ -1,0 +1,33 @@
+The push refers to repository [us.icr.io/sn-labs-n2raka00/taxcalculator]
+e542d987eb7a: Preparing
+2e41819a4d87: Preparing
+7845b9ce26b9: Preparing
+ade4d3745a6b: Preparing
+71bca2c2e47e: Preparing
+baeb18ce629e: Preparing
+d25d8a6317e7: Preparing
+b103a0231ea1: Preparing
+7f047c6929df: Preparing
+1ec0927e56d8: Preparing
+06b2003a5e20: Preparing
+f2ec4de84f55: Preparing
+7f047c6929df: Waiting
+1ec0927e56d8: Waiting
+06b2003a5e20: Waiting
+f2ec4de84f55: Waiting
+b103a0231ea1: Waiting
+baeb18ce629e: Waiting
+d25d8a6317e7: Waiting
+71bca2c2e47e: Pushed
+e542d987eb7a: Pushed
+7845b9ce26b9: Pushed
+2e41819a4d87: Pushed
+ade4d3745a6b: Pushed
+baeb18ce629e: Pushed
+b103a0231ea1: Pushed
+d25d8a6317e7: Pushed
+7f047c6929df: Pushed
+1ec0927e56d8: Pushed
+06b2003a5e20: Pushed
+f2ec4de84f55: Pushed
+v1: digest: sha256:e267f9afad41ef59794ca2e330e0c4cdde7084f0b80481d8a0d0458f5a3cf5b0 size: 2816
