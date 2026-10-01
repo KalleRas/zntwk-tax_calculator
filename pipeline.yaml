@@ -1,0 +1,63 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: tax-calculator-pipeline
+spec:
+  workspaces:
+    - name: output
+  params:
+    - name: repo-url
+      type: string
+      default: https://github.com/KalleRas/zntwk-tax_calculator.git
+    - name: branch
+      type: string
+      default: main
+    - name: build-image
+      type: string
+  tasks:
+    - name: clone
+      workspaces:
+        - name: output
+          workspace: output
+      taskRef:
+        name: git-clone
+        kind: ClusterTask
+      params:
+        - name: url
+          value: $(params.repo-url)
+        - name: revision
+          value: $(params.branch)
+
+    - name: npminstall
+      runAfter:
+        - clone
+      workspaces:
+        - name: source
+          workspace: output
+      taskRef:
+        name: npm
+      params:
+        - name: args
+          value: install
+
+    - name: tests
+      runAfter:
+        - npminstall
+      workspaces:
+        - name: source
+          workspace: output
+      taskRef:
+        name: jasmine
+
+    - name: build
+      runAfter:
+        - tests
+      workspaces:
+        - name: source
+          workspace: output
+      taskRef:
+        name: buildah
+        kind: ClusterTask
+      params:
+        - name: IMAGE
+          value: $(params.build-image)
